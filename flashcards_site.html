@@ -1,0 +1,123 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Flashcards Médicos – Hemorragia e Mordedura</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f4f8;
+      margin: 0;
+      padding: 20px;
+      text-align: center;
+    }
+    h1 {
+      color: #333;
+    }
+    #menu {
+      margin-bottom: 30px;
+    }
+    .card {
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      padding: 30px;
+      max-width: 600px;
+      margin: 0 auto 20px;
+    }
+    button {
+      margin: 8px;
+      padding: 10px 20px;
+      font-size: 16px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .reveal { background-color: #007bff; color: white; }
+    .correct { background-color: #28a745; color: white; }
+    .wrong { background-color: #dc3545; color: white; }
+    .nav { background-color: #6c757d; color: white; }
+  </style>
+</head>
+<body>
+  <h1>Flashcards Médicos</h1>
+  <div id="menu">
+    <button class="nav" onclick="startDeck('hemorragia')">Hemorragia</button>
+    <button class="nav" onclick="startDeck('mordedura')">Mordedura de Animais</button>
+  </div>
+
+  <div class="card" id="card" style="display:none;">
+    <h2 id="question">Pergunta</h2>
+    <p id="answer" style="display:none; font-weight:bold;"></p>
+    <button class="reveal" onclick="showAnswer()">Mostrar Resposta</button><br>
+    <button class="correct" onclick="next(true)">Acertou</button>
+    <button class="wrong" onclick="next(false)">Errou</button>
+  </div>
+  <p id="score"></p>
+
+  <script>
+    const decks = {
+      hemorragia: [
+        { q: "O que caracteriza uma hemorragia arterial?", a: "Sangue vivo que sai em jato pulsátil" },
+        { q: "Quais são os três tipos de hemorragia quanto à localização?", a: "Externa, interna, cavitária" },
+        { q: "Hemorragias venosas são geralmente:", a: "De controle mais fácil, com sangue escuro" },
+        { q: "Volume sanguíneo estimado em adulto normal?", a: "7% do peso corporal" },
+        { q: "Hemorragia Classe IV envolve perda de sangue de quanto?", a: ">40% do volume sanguíneo" },
+        { q: "Último recurso para conter hemorragia externa?", a: "Torniquete" },
+        { q: "O torniquete deve ser afrouxado a cada:", a: "10 a 15 minutos" },
+        { q: "Sinais indiretos de hemorragia interna incluem:", a: "Palidez, sudorese, confusão mental" },
+        { q: "O que é hemoptise?", a: "Sangue vindo dos pulmões pela boca, com tosse" },
+        { q: "Conduta em epistaxe (sangramento nasal):", a: "Inclinar cabeça para frente e pressionar a narina" }
+      ],
+      mordedura: [
+        { q: "Principal risco infeccioso de mordeduras de animais?", a: "Transmissão da raiva" },
+        { q: "Animal mais associado à osteomielite por mordida?", a: "Gato" },
+        { q: "Local comum de mordida em crianças?", a: "Face" },
+        { q: "Bactéria mais comum em mordida de gato?", a: "Pasteurella multocida" },
+        { q: "Prazo ideal para atendimento de mordida?", a: "Até 6 a 8 horas" },
+        { q: "Indicação para profilaxia antibiótica?", a: "Feridas profundas, em mãos, rosto, articulações, imunocomprometidos" },
+        { q: "Limpeza inicial da ferida de mordida deve ser com:", a: "Água e sabão em abundância" },
+        { q: "Agente causador da raiva?", a: "Vírus rábico" },
+        { q: "Período médio de incubação da raiva?", a: "1 a 3 meses" },
+        { q: "Forma mais comum de apresentação da raiva?", a: "Forma furiosa (70-80%)" }
+      ]
+    };
+
+    let currentDeck = [];
+    let currentIndex = 0;
+    let score = 0;
+
+    function startDeck(deckName) {
+      currentDeck = decks[deckName];
+      currentIndex = 0;
+      score = 0;
+      document.getElementById("menu").style.display = "none";
+      document.getElementById("card").style.display = "block";
+      document.getElementById("score").innerHTML = "";
+      loadCard();
+    }
+
+    function loadCard() {
+      if (currentIndex < currentDeck.length) {
+        document.getElementById("question").textContent = currentDeck[currentIndex].q;
+        document.getElementById("answer").textContent = currentDeck[currentIndex].a;
+        document.getElementById("answer").style.display = "none";
+      } else {
+        document.getElementById("card").style.display = "none";
+        document.getElementById("score").innerHTML = `Você acertou <strong>${score}</strong> de <strong>${currentDeck.length}</strong> perguntas!`;
+      }
+    }
+
+    function showAnswer() {
+      document.getElementById("answer").style.display = "block";
+    }
+
+    function next(correct) {
+      if (correct) score++;
+      currentIndex++;
+      loadCard();
+    }
+  </script>
+</body>
+</html>
