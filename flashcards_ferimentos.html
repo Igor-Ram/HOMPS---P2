@@ -1,0 +1,56 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Flashcards - Ferimentos em Partes Moles</title>
+  <style>
+    body { font-family: Arial, sans-serif; background: #f4f4f4; margin: 0; padding: 2rem; }
+    h1 { text-align: center; }
+    .card { background: white; border-radius: 10px; padding: 1rem; margin: 1rem auto; width: 80%; max-width: 600px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); cursor: pointer; transition: 0.3s; }
+    .card:hover { background: #eef; }
+    .answer { display: none; margin-top: 0.5rem; color: #333; }
+  </style>
+</head>
+<body>
+  <h1>Flashcards - Ferimentos em Partes Moles</h1>
+
+  <div class="card" onclick="toggleAnswer(this)">
+    <strong>O que são ferimentos em partes moles?</strong>
+    <div class="answer">São lesões que afetam tecidos moles do corpo, com ou sem perda de substância, podendo ser superficiais ou profundas.</div>
+  </div>
+
+  <div class="card" onclick="toggleAnswer(this)">
+    <strong>Quais são os tipos principais de ferimentos?</strong>
+    <div class="answer">Cortantes, perfurantes, corto-contusos, perfuro-contusos, contusos, lacerantes, transfixantes, avulsões, escoriações, amputativos, incrustados.</div>
+  </div>
+
+  <div class="card" onclick="toggleAnswer(this)">
+    <strong>Como diferenciar ferimentos superficiais e profundos?</strong>
+    <div class="answer">Superficiais atingem apenas a pele, tecido subcutâneo e músculos; profundos envolvem nervos, vasos, tendões ou ossos.</div>
+  </div>
+
+  <div class="card" onclick="toggleAnswer(this)">
+    <strong>Qual o primeiro passo ao atender um ferimento?</strong>
+    <div class="answer">Lavar as mãos com água e sabão antes de qualquer manipulação.</div>
+  </div>
+
+  <div class="card" onclick="toggleAnswer(this)">
+    <strong>O que nunca se deve fazer em ferimentos com objetos encravados?</strong>
+    <div class="answer">Nunca remover o objeto. Deve-se estabilizá-lo com curativo apropriado.</div>
+  </div>
+
+  <div class="card" onclick="toggleAnswer(this)">
+    <strong>Como deve ser preservado um membro amputado?</strong>
+    <div class="answer">Envolver em gaze seca, colocar em saco plástico e mantê-lo em recipiente com gelo, sem contato direto.</div>
+  </div>
+
+  <script>
+    function toggleAnswer(card) {
+      const answer = card.querySelector(".answer");
+      answer.style.display = answer.style.display === "block" ? "none" : "block";
+    }
+  </script>
+</body>
+</html>
