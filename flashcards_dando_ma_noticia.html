@@ -1,0 +1,71 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Flashcards - Dando Más Notícias</title>
+  <style>
+    body { font-family: Arial, sans-serif; background: #f4f4f4; margin: 0; padding: 2rem; }
+    h1 { text-align: center; }
+    .card { background: white; border-radius: 10px; padding: 1rem; margin: 1rem auto; width: 80%; max-width: 600px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); cursor: pointer; transition: 0.3s; }
+    .card:hover { background: #eef; }
+    .answer { display: none; margin-top: 0.5rem; color: #333; }
+  </style>
+</head>
+<body>
+  <h1>Flashcards - Dando Más Notícias</h1>
+
+  <div class="card" onclick="toggleAnswer(this)">
+    <strong>O que é uma má notícia?</strong>
+    <div class="answer">É um conceito relativo, que representa uma mudança drástica e negativa na vida da pessoa e sua perspectiva de futuro.</div>
+  </div>
+
+  <div class="card" onclick="toggleAnswer(this)">
+    <strong>Por que é difícil dar uma má notícia?</strong>
+    <div class="answer">Medo da reação, incerteza sobre o que dizer, experiências pessoais, medo de perturbar a estrutura familiar ou de processos judiciais.</div>
+  </div>
+
+  <div class="card" onclick="toggleAnswer(this)">
+    <strong>Quais são as consequências para o paciente e a família?</strong>
+    <div class="answer">Afeta percepção, avaliação, gera negação, raiva, desespero e pode impactar a família por muito tempo.</div>
+  </div>
+
+  <div class="card" onclick="toggleAnswer(this)">
+    <strong>Quais são as consequências para o profissional?</strong>
+    <div class="answer">Sensação de fracasso, culpa, medo de processos e distanciamento emocional.</div>
+  </div>
+
+  <div class="card" onclick="toggleAnswer(this)">
+    <strong>O que significa "O mapa não é o território"?</strong>
+    <div class="answer">Significa que cada pessoa interpreta a realidade de forma única, com base em suas experiências e percepções.</div>
+  </div>
+
+  <div class="card" onclick="toggleAnswer(this)">
+    <strong>O que é o protocolo ABCDE?</strong>
+    <div class="answer">Advance preparation, Build a therapeutic environment, Communicate well, Deal with reactions, Encourage emotions.</div>
+  </div>
+
+  <div class="card" onclick="toggleAnswer(this)">
+    <strong>O que é o protocolo SPIKES?</strong>
+    <div class="answer">Setting, Perception, Invitation, Knowledge, Emotions, Strategy/Summary. Um guia para dar más notícias com empatia.</div>
+  </div>
+
+  <div class="card" onclick="toggleAnswer(this)">
+    <strong>Que cuidados devemos ter antes de dar uma má notícia?</strong>
+    <div class="answer">Verificar se o paciente espera, quem deve estar presente, o que ele já sabe, tempo disponível, local adequado e linguagem apropriada.</div>
+  </div>
+
+  <div class="card" onclick="toggleAnswer(this)">
+    <strong>O que evitar ao dar uma má notícia?</strong>
+    <div class="answer">Evitar locais inadequados, parecer distraído, dar prognóstico com tempo exato, ou dizer que nada mais pode ser feito.</div>
+  </div>
+
+  <script>
+    function toggleAnswer(card) {
+      const answer = card.querySelector(".answer");
+      answer.style.display = answer.style.display === "block" ? "none" : "block";
+    }
+  </script>
+</body>
+</html>
