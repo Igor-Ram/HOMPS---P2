@@ -1,0 +1,71 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Flashcards - Choque Elétrico</title>
+  <style>
+    body { font-family: Arial, sans-serif; background: #f4f4f4; margin: 0; padding: 2rem; }
+    h1 { text-align: center; }
+    .card { background: white; border-radius: 10px; padding: 1rem; margin: 1rem auto; width: 80%; max-width: 600px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); cursor: pointer; transition: 0.3s; }
+    .card:hover { background: #eef; }
+    .answer { display: none; margin-top: 0.5rem; color: #333; }
+  </style>
+</head>
+<body>
+  <h1>Flashcards - Choque Elétrico</h1>
+
+  <div class="card" onclick="toggleAnswer(this)">
+    <strong>O que é uma lesão elétrica?</strong>
+    <div class="answer">É o efeito da corrente elétrica no corpo humano, causando desde queimaduras até disfunções multiorgânicas.</div>
+  </div>
+
+  <div class="card" onclick="toggleAnswer(this)">
+    <strong>Quais os três mecanismos de lesão elétrica?</strong>
+    <div class="answer">1. Efeito direto da corrente; 2. Energia térmica; 3. Contração muscular e trauma secundário.</div>
+  </div>
+
+  <div class="card" onclick="toggleAnswer(this)">
+    <strong>Qual a relação da Lei de Joule com lesões elétricas?</strong>
+    <div class="answer">A energia térmica (calor) gerada é proporcional à corrente x tensão x tempo de contato.</div>
+  </div>
+
+  <div class="card" onclick="toggleAnswer(this)">
+    <strong>Como a corrente alternada afeta a vítima?</strong>
+    <div class="answer">Pode causar contrações musculares repetidas, dificultando que a vítima se solte da fonte elétrica.</div>
+  </div>
+
+  <div class="card" onclick="toggleAnswer(this)">
+    <strong>Qual corrente elétrica pode causar parada cardíaca?</strong>
+    <div class="answer">Correntes entre 50-100 mA podem causar fibrilação ventricular; acima de 2 A, assistolia.</div>
+  </div>
+
+  <div class="card" onclick="toggleAnswer(this)">
+    <strong>Quais são os principais sintomas de choque elétrico?</strong>
+    <div class="answer">Formigamento, cãibras, arritmias, náuseas, cefaleia, escotomas, dispneia, vertigem.</div>
+  </div>
+
+  <div class="card" onclick="toggleAnswer(this)">
+    <strong>Qual o primeiro cuidado ao socorrer vítima de choque elétrico?</strong>
+    <div class="answer">Cortar a corrente elétrica e só depois tocar na vítima.</div>
+  </div>
+
+  <div class="card" onclick="toggleAnswer(this)">
+    <strong>Quais materiais podem ser usados para afastar a vítima da fonte elétrica?</strong>
+    <div class="answer">Materiais isolantes secos: pano grosso, jornal dobrado, cabo de vassoura, luvas de borracha.</div>
+  </div>
+
+  <div class="card" onclick="toggleAnswer(this)">
+    <strong>Quais cuidados devem ser tomados após a ressuscitação?</strong>
+    <div class="answer">Exame geral da vítima para detectar queimaduras, fraturas ou outras lesões.</div>
+  </div>
+
+  <script>
+    function toggleAnswer(card) {
+      const answer = card.querySelector(".answer");
+      answer.style.display = answer.style.display === "block" ? "none" : "block";
+    }
+  </script>
+</body>
+</html>
